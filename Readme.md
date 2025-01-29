@@ -1,3 +1,3 @@
 #Chai Aur Backend
 
-This is a video Series for Backend
+This is a backend project with Nikhil Sharma
