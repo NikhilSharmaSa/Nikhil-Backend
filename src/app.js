@@ -23,6 +23,21 @@ app.use(express.static("public"))
 
 app.use(cookieParser())
 
+app.get("/",(req,res)=>{
+    res.send("this is demo website url")
+})
+
+//routes import 
+
+import userRouter from './routes/user.routes.js'
+
+
+
+//routes decleration
+
+
+
+app.use("/user",userRouter)
 
 
 export {app}
