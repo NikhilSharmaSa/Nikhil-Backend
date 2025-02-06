@@ -37,7 +37,7 @@ import userRouter from './routes/user.routes.js'
 
 
 
-app.use("/user",userRouter)
+app.use("/api/v1/users",userRouter)
 
 
 export {app}
