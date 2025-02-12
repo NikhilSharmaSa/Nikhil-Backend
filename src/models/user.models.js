@@ -44,13 +44,13 @@ fullName:{
 ,
 refreshToken:{
     type:String,
-    required:true
+
 },
 watchHistory:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"Video",
     default:null,
-    required:true
+
 }]
 
 },{timestamps:true})
