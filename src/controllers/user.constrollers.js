@@ -113,7 +113,6 @@ const loginUser=asyncHandler(async(req,res)=>{
 //send cookie
 //send res to user that you are login 
 
-console.log(req.body)
 const {email,username,password}=req.body;
 
 if(!username && !email) {
@@ -145,6 +144,23 @@ const options={
 
 
 const logoutUser= asyncHandler(async(req,res)=>{
-User.findById()
+    
+ await User.findByIdAndUpdate(req.user._id,{
+    $set:{
+        refreshToken:undefined
+    }
+})
+
+const options={
+    httpOnly:true,
+    secure:true
+}
+
+res.status(200).clearCookie("accessToken",options).clearCookie("refreshToken",options).json(new ApiResponse(
+    200,
+    {},
+    "User Logout Successfully"
+))
+
 })
 export { registerUser,loginUser,logoutUser}
